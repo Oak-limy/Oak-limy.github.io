@@ -2,18 +2,20 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>我的个人邮箱开始施工了！！！ | Gridea</title>
+<title>个人常用模板 | Gridea</title>
 <link rel="shortcut icon" href="https://Oak-limy.github.io/favicon.ico?v=1585494546929">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://Oak-limy.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="我的个人邮箱开始施工了！！！ | Gridea - Atom Feed" href="https://Oak-limy.github.io/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="个人常用模板 | Gridea - Atom Feed" href="https://Oak-limy.github.io/atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-    <meta name="description" content="尽管知道就算搞出来了也没人看/kk
-emmemmemm
-..." />
+    <meta name="description" content="常规模板
+#include &lt;bits/stdc++.h&gt;
+#define endl '\n'
+#define fast ios::sync_with_stdio(0),cin.tie(0),cout.tie(0)
+#defin..." />
     <meta name="keywords" content="" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
@@ -76,22 +78,73 @@ emmemmemm
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              我的个人邮箱开始施工了！！！
+              个人常用模板
             </h2>
             <div class="post-info">
               <span>
                 2020-03-29
               </span>
               <span>
-                1 min read
+                3 min read
               </span>
               
             </div>
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>尽管知道就算搞出来了也没人看/kk<br>
-<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>e</mi><mi>m</mi><mi>m</mi></mrow><annotation encoding="application/x-tex">emm</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">e</span><span class="mord mathdefault">m</span><span class="mord mathdefault">m</span></span></span></span></p>
+                <p>常规模板</p>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+#define endl '\n'
+#define fast ios::sync_with_stdio(0),cin.tie(0),cout.tie(0)
+#define zy -2147382637
+#define bql 2147483647
+#define ll long long
+#define ull unsigned long long
+#define ld long double
+#define il inline
+#define sz(x) x.size()
+#define maxn 100010
+#define rp(i, l, r) for (int i = l; i &lt;= r; i++)
+#define rb(i, r, l) for (int i = r; i &gt;= l; i--)
+#define fi first
+#define se second
+#define pb push_back
+#define mp make_pair
+
+using namespace std;
+ll max(ll a,ll b){if(a&gt;b)return a;else return b;}
+ll min(ll a,ll b){if(a&lt;b)return a;else return b;}
+ll lowbit(ll x){return x&amp;(-x);}
+ll prime(ll x){
+   if(x&lt;=1)return false;
+   for(int i=2;i&lt;=int(sqrt(x));i++){
+	   if(x%i==0)return false;
+   }return true;
+}
+bool cmp(ll a,ll b){return a&gt;b;}
+ll gcd(ll a,ll b){ll r;while(b&gt;0){r=a%b;a=b;b=r;}return a;}
+ll powmod(ll a,ll b,ll mod) {ll res=1;a%=mod; assert(b&gt;=0); for(;b;b&gt;&gt;=1){if(b&amp;1)res=res*a%mod;a=a*a%mod;}return res;}
+inline ll read() {
+	char c = getchar(); ll w = 1; ll x = 0;
+	while (!isdigit(c))
+		(c == '-') &amp;&amp; (w = -w), c = getchar();
+	while (isdigit(c))
+		x = (x &lt;&lt; 1) + (x &lt;&lt; 3) + (c ^ '0'), c = getchar();
+	x *= w;
+}
+void fl(string name){
+	freopen((name+&quot;.in&quot;).c_str(),&quot;r&quot;,stdin);
+	freopen((name+&quot;.out&quot;).c_str(),&quot;w&quot;,stdout);
+}
+const int dx[8] = {-1, 1, 0, 0, -1, 1, -1, 1},
+		  dy[8] = {0, 0, -1, 1, -1, -1, 1, 1};
+
+
+int main(){
+	fast;
+
+}/*『你强归你强，Siyuan比你强』*/
+</code></pre>
 
               </div>
               <div class="toc-container">
@@ -101,6 +154,15 @@ emmemmemm
           </article>
         </div>
 
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://Oak-limy.github.io/post/wo-de-ge-ren-you-xiang-kai-shi-shi-gong-liao/">
+              <h3 class="post-title">
+                我的个人邮箱开始施工了！！！
+              </h3>
+            </a>
+          </div>
         
 
         
