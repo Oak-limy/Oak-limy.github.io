@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Oak-limy.github.io</id>
     <title>Oak_limy 的 博客</title>
-    <updated>2020-03-30T14:10:29.744Z</updated>
+    <updated>2020-03-30T16:20:48.867Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Oak-limy.github.io"/>
     <link rel="self" href="https://Oak-limy.github.io/atom.xml"/>
@@ -10,6 +10,48 @@
     <logo>https://Oak-limy.github.io/images/avatar.png</logo>
     <icon>https://Oak-limy.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Oak_limy 的 博客</rights>
+    <entry>
+        <title type="html"><![CDATA[任务计划]]></title>
+        <id>https://Oak-limy.github.io/post/ren-wu-ji-hua/</id>
+        <link href="https://Oak-limy.github.io/post/ren-wu-ji-hua/">
+        </link>
+        <updated>2020-03-30T14:54:15.000Z</updated>
+        <content type="html"><![CDATA[<p><strong>训练计划：</strong></p>
+<ul>
+<li><a href="https://atcoder.jp/contests/dp">Atcoder dp contest</a><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mspace width="1em"/></mrow><annotation encoding="application/x-tex">\quad</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mspace" style="margin-right:1em;"></span></span></span></span>(<a href="https://blog.csdn.net/hqg_ac/article/details/85984085">题解</a>)<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mspace width="1em"/></mrow><annotation encoding="application/x-tex">\quad</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mspace" style="margin-right:1em;"></span></span></span></span>(1 / 26)</li>
+<li><a href="https://www.luogu.com.cn/training/4986">Div. 3难度图论树论题练手(自制题单)</a><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mspace width="1em"/></mrow><annotation encoding="application/x-tex">\quad</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mspace" style="margin-right:1em;"></span></span></span></span>(3 / ∞)</li>
+<li>补之前打过的CF的题</li>
+<li><a href="https://www.luogu.com.cn/problem/list?tag=83">补刷历年 NOIP-TG 的题</a></li>
+<li>CF Div2 D &amp; E题</li>
+</ul>
+<p><strong>算法学习：</strong></p>
+<ul>
+<li><strong>各种dp（（（</strong></li>
+<li>网络流</li>
+<li>字符串(SA &amp; SAM &amp; KMP)</li>
+<li>FFT &amp; NTT</li>
+<li>数学</li>
+<li>毒瘤数据结构(平衡树 &amp; 主席树 &amp; splay &amp; Treap)</li>
+<li>树链剖分</li>
+<li>图论()</li>
+</ul>
+<p><strong>算法复习：</strong></p>
+<ul>
+<li>线段树</li>
+<li>模拟（</li>
+</ul>
+<p><strong>学习中：</strong></p>
+<ul>
+<li>dp</li>
+<li>树链剖分</li>
+<li>数据结构</li>
+</ul>
+<p><strong>老师教的好，同学学的会👍：</strong></p>
+<ul>
+<li>博 弈 论</li>
+</ul>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[个人常用模板]]></title>
         <id>https://Oak-limy.github.io/post/ge-ren-chang-yong-mo-ban/</id>
@@ -78,7 +120,8 @@ int main(){
         </link>
         <updated>2020-03-29T13:50:29.000Z</updated>
         <content type="html"><![CDATA[<p>尽管知道就算搞出来了也没人看/kk<br>
-<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>e</mi><mi>m</mi><mi>m</mi></mrow><annotation encoding="application/x-tex">emm</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">e</span><span class="mord mathdefault">m</span><span class="mord mathdefault">m</span></span></span></span></p>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>e</mi><mi>m</mi><mi>m</mi></mrow><annotation encoding="application/x-tex">emm</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">e</span><span class="mord mathdefault">m</span><span class="mord mathdefault">m</span></span></span></span><br>
+尽管很弱，但是基本的东西总是要有的（</p>
 ]]></content>
     </entry>
 </feed>
