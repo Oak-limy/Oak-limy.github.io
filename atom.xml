@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Oak-limy.github.io</id>
     <title>Oak_limy 的 博客</title>
-    <updated>2020-03-30T23:35:45.293Z</updated>
+    <updated>2020-04-07T01:41:34.972Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Oak-limy.github.io"/>
     <link rel="self" href="https://Oak-limy.github.io/atom.xml"/>
@@ -18,7 +18,7 @@
         <updated>2020-03-30T14:54:15.000Z</updated>
         <content type="html"><![CDATA[<p><strong>训练计划：</strong></p>
 <ul>
-<li><a href="https://atcoder.jp/contests/dp">Atcoder dp contest</a><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mspace width="1em"/></mrow><annotation encoding="application/x-tex">\quad</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mspace" style="margin-right:1em;"></span></span></span></span>(<a href="https://blog.csdn.net/hqg_ac/article/details/85984085">题解</a>)<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mspace width="1em"/></mrow><annotation encoding="application/x-tex">\quad</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mspace" style="margin-right:1em;"></span></span></span></span>(1 / 26)</li>
+<li><a href="https://atcoder.jp/contests/dp">Atcoder dp contest</a><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mspace width="1em"/></mrow><annotation encoding="application/x-tex">\quad</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mspace" style="margin-right:1em;"></span></span></span></span>(<a href="https://blog.csdn.net/hqg_ac/article/details/85984085">题解</a>)<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mspace width="1em"/></mrow><annotation encoding="application/x-tex">\quad</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mspace" style="margin-right:1em;"></span></span></span></span>(7 / 26)</li>
 <li><a href="https://www.luogu.com.cn/training/4986">Div. 3难度图论树论题练手(自制题单)</a><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mspace width="1em"/></mrow><annotation encoding="application/x-tex">\quad</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mspace" style="margin-right:1em;"></span></span></span></span>(3 / ∞)</li>
 <li>补之前打过的CF的题</li>
 <li><a href="https://www.luogu.com.cn/problem/list?tag=83">补刷历年 NOIP-TG 的题</a></li>
@@ -58,7 +58,7 @@
         <link href="https://Oak-limy.github.io/post/ge-ren-chang-yong-mo-ban/">
         </link>
         <updated>2020-03-29T15:08:02.000Z</updated>
-        <content type="html"><![CDATA[<p>常规模板</p>
+        <content type="html"><![CDATA[<p><strong>常规模板</strong></p>
 <pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
 #define endl '\n'
 #define fast ios::sync_with_stdio(0),cin.tie(0),cout.tie(0)
