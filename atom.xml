@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Oak-limy.github.io</id>
     <title>Oak_limy 的 博客</title>
-    <updated>2020-05-03T18:12:45.707Z</updated>
+    <updated>2020-05-28T15:26:33.754Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Oak-limy.github.io"/>
     <link rel="self" href="https://Oak-limy.github.io/atom.xml"/>
@@ -132,7 +132,7 @@ int main(){
         <link href="https://Oak-limy.github.io/post/ge-ren-chang-yong-mo-ban/">
         </link>
         <updated>2020-03-29T15:08:02.000Z</updated>
-        <content type="html"><![CDATA[<p><strong>常规模板</strong></p>
+        <content type="html"><![CDATA[<p>**常规模板 **</p>
 <pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
 #define endl '\n'
 #define fast ios::sync_with_stdio(0),cin.tie(0),cout.tie(0)
@@ -160,17 +160,26 @@ ll prime(ll x){
    for(int i=2;i&lt;=int(sqrt(x));i++){
 	   if(x%i==0)return false;
    }return true;
-}
-bool cmp(ll a,ll b){return a&gt;b;}
+}bool cmp(ll a,ll b){return a&gt;b;}
 ll gcd(ll a,ll b){ll r;while(b&gt;0){r=a%b;a=b;b=r;}return a;}
 ll powmod(ll a,ll b,ll mod) {ll res=1;a%=mod; assert(b&gt;=0); for(;b;b&gt;&gt;=1){if(b&amp;1)res=res*a%mod;a=a*a%mod;}return res;}
-inline ll read() {
+inline int readint() {
+	char c = getchar(); int w = 1; int x = 0;
+	while (!isdigit(c))
+		(c == '-') &amp;&amp; (w = -w), c = getchar();
+	while (isdigit(c))
+		x = (x &lt;&lt; 3) + (x &lt;&lt; 1) + (c ^ '0'), c = getchar();
+	x *= w;
+	return x;
+}
+inline ll readll() {
 	char c = getchar(); ll w = 1; ll x = 0;
 	while (!isdigit(c))
 		(c == '-') &amp;&amp; (w = -w), c = getchar();
 	while (isdigit(c))
-		x = (x &lt;&lt; 1) + (x &lt;&lt; 3) + (c ^ '0'), c = getchar();
+		x = (x &lt;&lt; 3) + (x &lt;&lt; 1) + (c ^ '0'), c = getchar();
 	x *= w;
+	return x;
 }
 void fl(string name){
 	freopen((name+&quot;.in&quot;).c_str(),&quot;r&quot;,stdin);
@@ -178,12 +187,18 @@ void fl(string name){
 }
 const int dx[8] = {-1, 1, 0, 0, -1, 1, -1, 1},
 		  dy[8] = {0, 0, -1, 1, -1, -1, 1, 1};
-
-
 int main(){
-	fast;
-
-}/*『你强归你强，Siyuan比你强』*/
+	
+}
+/* stuff to remember
+	* int overflow, array bounds
+	* special cases (n=1? n=0?)
+	* do something instead of nothing and stay organized
+	* USE STATIC ARRAYS
+	* DEFINING ARRAYS BEFORE main()
+	* DO NOT DEFINING ARRAYS IN main()
+	* USE INT INSTEAD OF LL,NOTICE THE MLE
+*/
 </code></pre>
 ]]></content>
     </entry>
