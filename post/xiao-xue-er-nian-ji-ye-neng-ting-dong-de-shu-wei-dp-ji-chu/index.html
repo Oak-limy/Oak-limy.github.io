@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>小学二年级也能听懂的数位dp基础（ | Oak_limy 的 博客</title>
+<meta name="description" content="音无结弦之时，悦动天使之心。立于浮华之世，奏响天籁之音。">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="https://Oak-limy.github.io/favicon.ico?v=1593194575715">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://Oak-limy.github.io/styles/main.css">
+
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+  </head>
+  <body>
+  
+    <nav class="navbar border fixed split-nav">
+  <div class="nav-brand">
+    <h3><a href="https://Oak-limy.github.io">Oak_limy 的 博客</a></h3>
+  </div>
+  <div class="collapsible">
+    <input id="collapsible1" type="checkbox" name="collapsible1">
+    <button>
+      <label for="collapsible1">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </label>
+    </button>
+    <div class="collapsible-body">
+      <ul class="inline">
+        
+          <li>
+            
+              <a href="/" class="menu">
+                首页
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/archives" class="menu">
+                归档
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/tags" class="menu">
+                标签
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/post/about" class="menu">
+                关于
+              </a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div id="top" class="row site">
+      <div class="sm-12 md-8 col">
+        <div class="paper">
+          <article class="article">
+            <h1>小学二年级也能听懂的数位dp基础（</h1>
+            <p class="article-meta">
+              2020-06-27
+              
+            </p>
+            
+            <div class="post-content">
+              <h2 id="数位dp是什么">数位dp是什么</h2>
+<p><s>字面意思</s><br>
+数位dp往往都是一样的题型，给定一个闭区间 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mi>l</mi><mo separator="true">,</mo><mi>r</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">[l,r]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mclose">]</span></span></span></span>，让你求这个区间中满足某种条件的数的总数<br>
+<s>感觉很有套路</s></p>
+<h2 id="例题">例题</h2>
+<p><a href="https://www.luogu.com.cn/problem/P2657">P2657 [SCOI2009] windy 数</a><br>
+<strong>做法：</strong><br>
+这大概是数位dp模板题或者入门题，这种题还是挺套路的<br>
+我们设dp[i][j]为长度i中最高位是j的windy数的个数<br>
+dp[i][j]=<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mn>9</mn></msubsup><mo>[</mo><mi>a</mi><mi>b</mi><mi>s</mi><mo>(</mo><mi>j</mi><mo>−</mo><mi>k</mi><mo>)</mo><mo>&gt;</mo><mo>=</mo><mn>2</mn><mo>]</mo></mrow><annotation encoding="application/x-tex">\sum\limits_{k=0}^{9}[abs(j-k)&gt;=2]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.503226em;vertical-align:-1.002113em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.5011130000000001em;"><span style="top:-2.097887em;margin-left:0em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span><span class="mrel mtight">=</span><span class="mord mtight">0</span></span></span></span><span style="top:-3.000005em;"><span class="pstrut" style="height:3em;"></span><span><span class="mop op-symbol small-op">∑</span></span></span><span style="top:-3.950005em;margin-left:0em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">9</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.002113em;"><span></span></span></span></span></span><span class="mopen">[</span><span class="mord mathdefault">a</span><span class="mord mathdefault">b</span><span class="mord mathdefault">s</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span></span><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">2</span><span class="mclose">]</span></span></span></span><br>
+每一步的转移都是前一位的和转移过来的<br>
+先初始化所有的dp[i][j]<br>
+接着算<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">[a,b]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathdefault">a</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">b</span><span class="mclose">]</span></span></span></span>区间的所有windy数</p>
+<pre><code class="language-cpp">#define MAXN 20
+int a[MAXN],dp[MAXN][MAXN],n,m;
+void init(){ //初始化
+	for(int i=0;i&lt;=9;i++)dp[1][i]=1; //要注意0,1,2,3,4...9都属于windy数 
+	for(int i=2;i&lt;=10;i++){   //枚举从第二位开始的每一位
+		for(int j=0;j&lt;=9;j++){     //第i位上的数
+			for(int k=0;k&lt;=9;k++){ //从上一位的数转移过来
+				if(fabs(j-k)&gt;=2)dp[i][j]+=dp[i-1][k]; //状态转移
+			}
+		}
+	}
+}
+int work(int x){  //开始计算
+	int len=0;
+	ll ans=0;
+	memset(a,0,sizeof(a));
+	while(x&gt;0){
+		a[++len]=x%10;
+		x/=10;
+	} //算位数，用a数组存每一位，要注意这样存的是倒着存的，len位是最高位
+	// 1. 位数小于len，则无需考虑与x的大小关系
+	for(int i=1;i&lt;len;i++){  //1~len-1位
+		for(int j=1;j&lt;=9;j++){ //最高位只能取1~9
+			ans+=dp[i][j];
+		}
+	}
+	// 2.len位，最高位小于原数最高位，也不用考虑与x的大小关系
+	for(int i=1;i&lt;a[len];i++){
+		ans+=dp[len][i];
+	}
+	// 3. len位，最高位等于原数最高位，较为复杂，需要考虑与x的大小关系
+	for(int i=len-1;i&gt;=1;i--){ //处理 1~len-1位
+		for(int j=0;j&lt;=a[i]-1;j++){ //第i位为j
+			if(abs(j-a[i+1])&gt;=2)ans+=dp[i][j]; //计算
+		}
+		if(abs(a[i+1]-a[i])&lt;2)break; //小于2直接跳过
+	}
+	return ans;
+}
+int main(){
+	cin&gt;&gt;n&gt;&gt;m;
+	init();
+	cout&lt;&lt;work(m+1)-work(n)&lt;&lt;endl;
+    /*这里有的人会说为什么不是work(m)-work(n-1)
+       那是因为每次算work如果自己是windy数，但不会带上自己
+       所以需要计算work(x+1)，work(m+1)-work(n-1+1)，小细节需要注意一下
+       如果写work(m)-work(n-1)只能得90分
+                                                                          */
+	return 0;
+}
+</code></pre>
+
+            </div>
+          </article>
+        </div>
+        <div class="paper" data-aos="fade-in">
+          
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="https://Oak-limy.github.io/post/codeforces-round-636-div-3-f-ti-ti-jie/">
+                <h3 class="post-title">
+                  Codeforces Round 636 (Div. 3) F题 题解
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+        
+      </div>
+
+      <div class="sm-12 md-4 col sidebar">
+  <div class="paper info-container">
+    <img src="https://Oak-limy.github.io/images/avatar.png?v=1593194575715" class="no-responsive avatar">
+    <div class="text-muted">音无结弦之时，悦动天使之心。立于浮华之世，奏响天籁之音。</div>
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      最新文章
+    </div>
+    <div class="row">
+      <ul>
+        
+          
+            <li>
+              <a href="https://Oak-limy.github.io/post/xiao-xue-er-nian-ji-ye-neng-ting-dong-de-shu-wei-dp-ji-chu/">小学二年级也能听懂的数位dp基础（</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://Oak-limy.github.io/post/codeforces-round-636-div-3-f-ti-ti-jie/">Codeforces Round 636 (Div. 3) F题 题解</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://Oak-limy.github.io/post/CF1335F/">Codeforces Round 634 (Div. 3) F题 题解</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://Oak-limy.github.io/post/ren-wu-ji-hua/">任务计划</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://Oak-limy.github.io/post/ge-ren-chang-yong-mo-ban/">个人常用模板</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://Oak-limy.github.io/post/wo-de-ge-ren-you-xiang-kai-shi-shi-gong-liao/">我的个人博客开始施工了！！！</a>
+            </li>
+          
+        
+      </ul>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      标签列表
+    </div>
+    <div class="row">
+      
+        <a href="https://Oak-limy.github.io/tag/div3F/" class="badge warning">
+          div3F题
+        </a>
+      
+    </div>
+  </div>
+  <div class="paper">
+    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://Oak-limy.github.io/atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+
+
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+</script>
+
+
+
+
+  </body>
+</html>
