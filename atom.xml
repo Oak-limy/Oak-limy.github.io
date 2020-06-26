@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Oak-limy.github.io</id>
     <title>Oak_limy 的 博客</title>
-    <updated>2020-06-09T15:37:32.859Z</updated>
+    <updated>2020-06-26T15:06:47.207Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Oak-limy.github.io"/>
     <link rel="self" href="https://Oak-limy.github.io/atom.xml"/>
@@ -10,24 +10,6 @@
     <logo>https://Oak-limy.github.io/images/avatar.png</logo>
     <icon>https://Oak-limy.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Oak_limy 的 博客</rights>
-    <entry>
-        <title type="html"><![CDATA[小学二年级也能听懂的KMP算法]]></title>
-        <id>https://Oak-limy.github.io/post/xiao-xue-er-nian-ji-ye-neng-ting-dong-de-kmp-suan-fa/</id>
-        <link href="https://Oak-limy.github.io/post/xiao-xue-er-nian-ji-ye-neng-ting-dong-de-kmp-suan-fa/">
-        </link>
-        <updated>2020-06-09T15:35:15.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="一-模式串匹配">一. 模式串匹配</h1>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[jjj]]></title>
-        <id>https://Oak-limy.github.io/post/jjj/</id>
-        <link href="https://Oak-limy.github.io/post/jjj/">
-        </link>
-        <updated>2020-05-03T18:12:30.000Z</updated>
-        <content type="html"><![CDATA[<p>kk</p>
-]]></content>
-    </entry>
     <entry>
         <title type="html"><![CDATA[Codeforces Round 636 (Div. 3) F题 题解]]></title>
         <id>https://Oak-limy.github.io/post/codeforces-round-636-div-3-f-ti-ti-jie/</id>
@@ -94,6 +76,88 @@ int main(){
 ]]></content>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Codeforces Round 634 (Div. 3) F题 题解]]></title>
+        <id>https://Oak-limy.github.io/post/CF1335F/</id>
+        <link href="https://Oak-limy.github.io/post/CF1335F/">
+        </link>
+        <updated>2020-05-02T16:10:19.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="题意">题意</h3>
+<p>给你一个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>×</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">n\times m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">m</span></span></span></span> 的矩阵，每个格子上有颜色，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> 代表黑，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 代表白。每个格子上还有方向，在这个格子上的机器人会向格子方向的方向走，并且题目保证机器人不会走出矩阵。</p>
+<p>你需要完成以下几个任务：</p>
+<ul>
+<li>在格子上摆放尽可能多的机器人，他们同时开始<strong>无尽</strong>地运动，并且任何时刻都不能有两个机器人在同一个格子</li>
+<li>首先最大化机器人的个数，如果有多种方案机器人个数相等，再最大化初始时摆在黑格内的机器人</li>
+</ul>
+<p>首先，题目中提到的无尽，则代表每个机器人走的路线都是循环的。</p>
+<p>对于每个机器人，它走的路径最长也就是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>∗</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">n*m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.46528em;vertical-align:0em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">m</span></span></span></span>。我们考虑在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>∗</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">n * m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.46528em;vertical-align:0em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">m</span></span></span></span> 步内机器人的相遇情况</p>
+<p>如果有两个机器人在不在同一个循环里，毫不相干。则它们肯定不会相遇</p>
+<p>如果有两个机器人在同一个循环里，并且在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>×</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">n\times m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">m</span></span></span></span> 的步数里没有相遇，则他们也会以这样的节奏继续走下去，也不会相遇；反之如果相遇了的话，他们会在同样的格子里一直走下去。</p>
+<p>所以我们想判断两个机器人是否会相遇，只需要看在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>×</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">n\times m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">m</span></span></span></span> 的步数里两个机器人是否在一起就行了</p>
+<p>我们用一维 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi><mi>o</mi><mi>l</mi><mi>o</mi><mi>r</mi></mrow><annotation encoding="application/x-tex">color</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">c</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span></span> 数组表示每个位置的颜色，用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>w</mi><mi>h</mi><mi>i</mi><mi>t</mi><mi>e</mi></mrow><annotation encoding="application/x-tex">white</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="mord mathdefault">h</span><span class="mord mathdefault">i</span><span class="mord mathdefault">t</span><span class="mord mathdefault">e</span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi><mi>l</mi><mi>a</mi><mi>c</mi><mi>k</mi></mrow><annotation encoding="application/x-tex">black</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">a</span><span class="mord mathdefault">c</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span> 数组表示机器人的初始位置的颜色</p>
+<p>对于走 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>×</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">n\times m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">m</span></span></span></span> ，我们可以使用倍增，最后统计答案。</p>
+<pre><code class="language-cpp">const ll MAXN=1e6+10;
+ll a[MAXN],color[MAXN],black[MAXN],white[MAXN],mult[21][MAXN];
+ll t,n,m;
+char ch[MAXN];
+int main(){
+	cin&gt;&gt;t;
+	while(t--){
+		cin&gt;&gt;n&gt;&gt;m;
+		for(int i=1;i&lt;=n;i++){
+			cin&gt;&gt;ch+1;
+			for(int j=1;j&lt;=m;j++){
+				if(ch[j]=='0')color[(i-1)*m+j]=0;//黑色
+				else color[(i-1)*m+j]=1;//白色
+			}
+		}
+		for(int i=1;i&lt;=n;i++){
+			cin&gt;&gt;(ch+1);
+			for(int j=1;j&lt;=m;j++){
+				ll pos=(i-1)*m+j; //在数组上的位置
+				if(ch[j]=='U')mult[0][pos]=pos-m;//上
+				if(ch[j]=='D')mult[0][pos]=pos+m;//下
+				if(ch[j]=='L')mult[0][pos]=pos-1;//左
+				if(ch[j]=='R')mult[0][pos]=pos+1;//右
+			}
+		}
+		ll matrix=n*m;//最大路径
+		for(int i=1;i&lt;=20;i++){
+			for(int j=1;j&lt;=matrix;j++){
+				mult[i][j]=mult[i-1][mult[i-1][j]];//倍增
+			}
+		}
+		for(int j=1;j&lt;=matrix;j++){
+			ll pos=j;
+			for(int i=20;i;i--){
+				if((1&lt;&lt;i)&amp;matrix)pos=mult[i][pos];
+			}
+			if(color[j])white[pos]=1;//是白
+			else black[pos]=1;//是黑
+		}
+		ll res=0,bla=0;
+		for(int i=1;i&lt;=matrix;i++){
+			if(black[i]){
+				res++;
+				bla++;//是黑色的++
+				black[i]=0;
+				white[i]=0;
+			}
+			else if(white[i]){
+				res++;
+				black[i]=0;
+				white[i]=0;
+			}
+		}
+		cout&lt;&lt;res&lt;&lt;' '&lt;&lt;bla&lt;&lt;endl;
+	}
+	return 0;
+}
+</code></pre>
+<p>第一次在自己博客里发题解，感觉就是给菜鸡一样的自己看的，以后会继续尝试div3f题的qaq/kk</p>
+<p>还是希望大佬能支持/kel</p>
+]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[任务计划]]></title>
         <id>https://Oak-limy.github.io/post/ren-wu-ji-hua/</id>
         <link href="https://Oak-limy.github.io/post/ren-wu-ji-hua/">
@@ -109,7 +173,15 @@ int main(){
 </ul>
 <p><strong>算法学习：</strong></p>
 <ul>
-<li><strong>各种dp（（（</strong></li>
+<li>**各种dp（（（    **
+<ul>
+<li>数位dp</li>
+<li>期望dp</li>
+<li>树形dp</li>
+<li>概率dp</li>
+<li>斜率优化dp</li>
+</ul>
+</li>
 <li>网络流</li>
 <li>字符串(SA &amp; SAM &amp; KMP)</li>
 <li>FFT &amp; NTT</li>
@@ -133,6 +205,88 @@ int main(){
 <ul>
 <li>博 弈 论</li>
 </ul>
+<h2 id="做题计划">做题计划：</h2>
+<ul>
+<li>[【动态规划】普及~省选的dp题]{https://www.luogu.com.cn/training/1435}<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mspace width="1em"/></mrow><annotation encoding="application/x-tex">\quad</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mspace" style="margin-right:1em;"></span></span></span></span> (12 / 50)</li>
+<li>[莫比乌斯反演（函数）练习题单]{https://www.luogu.com.cn/training/1055}<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mspace width="1em"/></mrow><annotation encoding="application/x-tex">\quad</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mspace" style="margin-right:1em;"></span></span></span></span>(2 / 17)</li>
+<li>[codeforces 2200左右的DS题]{https://www.luogu.com.cn/training/1574} <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mspace width="1em"/></mrow><annotation encoding="application/x-tex">\quad</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mspace" style="margin-right:1em;"></span></span></span></span>(0/50)</li>
+</ul>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[个人常用模板]]></title>
+        <id>https://Oak-limy.github.io/post/ge-ren-chang-yong-mo-ban/</id>
+        <link href="https://Oak-limy.github.io/post/ge-ren-chang-yong-mo-ban/">
+        </link>
+        <updated>2020-03-29T15:08:02.000Z</updated>
+        <content type="html"><![CDATA[<p>**常规模板 **</p>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+#define endl '\n'
+#define fast ios::sync_with_stdio(0),cin.tie(0),cout.tie(0)
+#define zy -2147382637
+#define bql 2147483647
+#define ll long long
+#define ull unsigned long long
+#define ld long double
+#define il inline
+#define sz(x) x.size()
+#define maxn 100010
+#define rp(i, l, r) for (int i = l; i &lt;= r; i++)
+#define rb(i, r, l) for (int i = r; i &gt;= l; i--)
+#define fi first
+#define se second
+#define pb push_back
+#define mp make_pair
+
+using namespace std;
+ll max(ll a,ll b){if(a&gt;b)return a;else return b;}
+ll min(ll a,ll b){if(a&lt;b)return a;else return b;}
+ll lowbit(ll x){return x&amp;(-x);}
+ll prime(ll x){
+   if(x&lt;=1)return false;
+   for(int i=2;i&lt;=int(sqrt(x));i++){
+	   if(x%i==0)return false;
+   }return true;
+}bool cmp(ll a,ll b){return a&gt;b;}
+ll gcd(ll a,ll b){ll r;while(b&gt;0){r=a%b;a=b;b=r;}return a;}
+ll powmod(ll a,ll b,ll mod) {ll res=1;a%=mod; assert(b&gt;=0); for(;b;b&gt;&gt;=1){if(b&amp;1)res=res*a%mod;a=a*a%mod;}return res;}
+inline int readint() {
+	char c = getchar(); int w = 1; int x = 0;
+	while (!isdigit(c))
+		(c == '-') &amp;&amp; (w = -w), c = getchar();
+	while (isdigit(c))
+		x = (x &lt;&lt; 3) + (x &lt;&lt; 1) + (c ^ '0'), c = getchar();
+	x *= w;
+	return x;
+}
+inline ll readll() {
+	char c = getchar(); ll w = 1; ll x = 0;
+	while (!isdigit(c))
+		(c == '-') &amp;&amp; (w = -w), c = getchar();
+	while (isdigit(c))
+		x = (x &lt;&lt; 3) + (x &lt;&lt; 1) + (c ^ '0'), c = getchar();
+	x *= w;
+	return x;
+}
+void fl(string name){
+	freopen((name+&quot;.in&quot;).c_str(),&quot;r&quot;,stdin);
+	freopen((name+&quot;.out&quot;).c_str(),&quot;w&quot;,stdout);
+}
+const int dx[8] = {-1, 1, 0, 0, -1, 1, -1, 1},
+		  dy[8] = {0, 0, -1, 1, -1, -1, 1, 1};
+int main(){
+	
+}
+/* stuff to remember
+	* int overflow, array bounds
+	* special cases (n=1? n=0?)
+	* do something instead of nothing and stay organized
+	* USE STATIC ARRAYS
+	* DEFINING ARRAYS BEFORE main()
+	* DO NOT DEFINE ARRAYS IN main()
+	* USE INT INSTEAD OF LL,NOTICE THE MLE
+*/
+</code></pre>
 ]]></content>
     </entry>
     <entry>
