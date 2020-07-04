@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Oak-limy.github.io</id>
     <title>Oak_limy 的 博客</title>
-    <updated>2020-06-27T11:25:33.027Z</updated>
+    <updated>2020-07-04T17:34:15.447Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Oak-limy.github.io"/>
     <link rel="self" href="https://Oak-limy.github.io/atom.xml"/>
@@ -10,6 +10,52 @@
     <logo>https://Oak-limy.github.io/images/avatar.png</logo>
     <icon>https://Oak-limy.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Oak_limy 的 博客</rights>
+    <entry>
+        <title type="html"><![CDATA[小学六年级也能听懂的状压dp（浅谈]]></title>
+        <id>https://Oak-limy.github.io/post/xiao-xue-liu-nian-ji-ye-neng-ting-dong-de-zhuang-ya-dpqian-tan/</id>
+        <link href="https://Oak-limy.github.io/post/xiao-xue-liu-nian-ji-ye-neng-ting-dong-de-zhuang-ya-dpqian-tan/">
+        </link>
+        <updated>2020-07-04T17:14:03.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="状压dp">状压dp</h2>
+<p>指二进制状态压缩dp</p>
+<h2 id="例题">例题</h2>
+<p><a href="https://ac.nowcoder.com/acm/problem/50909">最短 Hamilton 问题</a><br>
+<strong>题面</strong>：给定一张 n(n <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>≤</mo></mrow><annotation encoding="application/x-tex">\leq</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mrel">≤</span></span></span></span> 20)个点的带权无向图，点从0 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∼</mo></mrow><annotation encoding="application/x-tex">\sim</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">∼</span></span></span></span> n-1标号，求起点 0 到终点n-1 的最短Hamilton路径。 Hamilton路径的定义是从 0 到 n-1 不重不漏地经过每个点恰好一次。<br>
+<strong>做法</strong><br>
+很容易想出来朴素做法，枚举 n 个点的全排列，计算路径长度去最小值，复杂度位 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>×</mo><mi>n</mi><mo>!</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n \times n!)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">n</span><span class="mclose">!</span><span class="mclose">)</span></span></span></span><br>
+接下来就是状压dp做法，它的复杂度位 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mi>n</mi><mn>2</mn></msup><mo>×</mo><msup><mn>2</mn><mi>n</mi></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n^2\times 2^n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span><br>
+我们可以用一串 n 位的二进制数来表示哪些点被经过了，如果第i位为1代表被经过，反之则没有。<br>
+我们还需知道当前所处的位置，我们设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo>[</mo><mi>i</mi><mo>]</mo><mo>[</mo><mi>j</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">F[i][j]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mopen">[</span><span class="mord mathdefault">i</span><span class="mclose">]</span><span class="mopen">[</span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span><span class="mclose">]</span></span></span></span> 表示当前被经过的点的二进制数状态和当前处于第j个点。<br>
+我们在起点时要设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo>[</mo><mn>1</mn><mo>]</mo><mo>[</mo><mn>0</mn><mo>]</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">F[1][0]=0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mopen">[</span><span class="mord">1</span><span class="mclose">]</span><span class="mopen">[</span><span class="mord">0</span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>因为经过0点所处位置为0，最短路长度为0。其余的，我们设F数组为无穷大<br>
+转移方程为 <span class='katex-error' title='ParseError: KaTeX parse error: Expected &#039;}&#039;, got &#039;EOF&#039; at end of input: …j),k]+dist[k,j]'>F[i][j]=min{F[i xor (1&lt;&lt;j),k]+dist[k,j]</span> 其余的微观细节看代码吧</p>
+<pre><code class="language-cpp">int n;
+int dp[1&lt;&lt;20][20],dis[20][20];
+int main(){
+	cin&gt;&gt;n;
+	for(int i=0;i&lt;n;i++){
+		for(int j=0;j&lt;n;j++){
+			cin&gt;&gt;dis[i][j];
+		}
+	}
+	memset(dp,0x3f,sizeof(dp));      //设无穷大
+	dp[1][0]=0;  //边界条件
+	for(int i=0;i&lt;(1&lt;&lt;n);i++){        //每种状态枚举
+		for(int j=0;j&lt;n;j++){
+			if((i&gt;&gt;j)&amp;1){          //如果这位来过 则可以尝试连接k和j  这一点类似floyd
+				for(int k=0;k&lt;n;k++){
+					if((i&gt;&gt;k)&amp;1){    //k来转移  
+						dp[i][j]=min(dp[i][j],dp[i^(1&lt;&lt;j)][k]+dis[k][j]);   //加上k的值
+					}
+				}
+			}
+		}
+	}
+	cout&lt;&lt;dp[(1&lt;&lt;n)-1][n-1]&lt;&lt;endl;             //最终的状态11111···     n个点
+	return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[小学二年级也能听懂的数位dp基础（]]></title>
         <id>https://Oak-limy.github.io/post/xiao-xue-er-nian-ji-ye-neng-ting-dong-de-shu-wei-dp-ji-chu/</id>
