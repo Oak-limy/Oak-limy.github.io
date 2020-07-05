@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Oak-limy.github.io</id>
     <title>Oak_limy 的 博客</title>
-    <updated>2020-07-05T02:53:27.200Z</updated>
+    <updated>2020-07-05T06:11:30.745Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Oak-limy.github.io"/>
     <link rel="self" href="https://Oak-limy.github.io/atom.xml"/>
@@ -44,7 +44,7 @@ int main(){
 			if((i&gt;&gt;j)&amp;1){          //如果这位来过 则可以尝试连接k和j  这一点类似floyd
 				for(int k=0;k&lt;n;k++){
 					if((i&gt;&gt;k)&amp;1){    //k来转移  
-						dp[i][j]=min(dp[i][j],dp[i^(1&lt;&lt;j)][k]+dis[k][j]);   //加上k的值
+						dp[i][j]=min(dp[i][j],dp[i^(1&lt;&lt;j)][k]+dis[k][j]);   //松弛操作
 					}
 				}
 			}
