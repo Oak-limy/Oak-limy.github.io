@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>个人常用模板 | Oak_limy 的 博客</title>
-<link rel="shortcut icon" href="https://Oak-limy.github.io/favicon.ico?v=1594733696059">
+<link rel="shortcut icon" href="https://Oak-limy.github.io/favicon.ico?v=1594737695389">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://Oak-limy.github.io/styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="个人常用模板 | Oak_limy 的 博客 - Atom Feed" href="https://Oak-limy.github.io/atom.xml">
@@ -25,7 +25,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://Oak-limy.github.io">
-  <img class="avatar" src="https://Oak-limy.github.io/images/avatar.png?v=1594733696059" alt="">
+  <img class="avatar" src="https://Oak-limy.github.io/images/avatar.png?v=1594737695389" alt="">
   </a>
   <h1 class="site-title">
     Oak_limy 的 博客
@@ -85,7 +85,7 @@
                 2020-03-29
               </span>
               <span>
-                7 min read
+                8 min read
               </span>
               
             </div>
@@ -156,7 +156,7 @@ int main(){
 */
 </code></pre>
 <p><strong>线段树模板</strong><br>
-带区间修改、区间求和、区间最大值、区间最小值</p>
+带区间覆盖、区间加、区间求和、区间最大值、区间最小值</p>
 <pre><code class="language-cpp">#define MAXN 200010
 struct SegmentTree{
 	ll l,r,sum,lazy,maxv,minv;
@@ -193,7 +193,21 @@ void build(ll p,ll l,ll r){
 	build(p&lt;&lt;1|1,mid+1,r);
 	push_up(p);
 }
-void modify(ll p,ll l,ll r,ll k){
+void modify_cover(ll p,ll l,ll r,ll k){
+	if(l&lt;=tree[p].l&amp;&amp;tree[p].r&lt;=r){
+		tree[p].sum=(tree[p].r-tree[p].l+1)*k;
+		tree[p].lazy=k;
+		tree[p].maxv=k;
+		tree[p].minv=k;
+		return;
+	}
+	update(p);
+	ll mid=(tree[p].l+tree[p].r)&gt;&gt;1;
+	if(l&lt;=mid)modify_cover(p&lt;&lt;1,l,r,k);
+	if(r&gt;mid)modify_cover(p&lt;&lt;1|1,l,r,k);
+	push_up(p);
+}
+void modify_add(ll p,ll l,ll r,ll k){
 	if(l&lt;=tree[p].l&amp;&amp;tree[p].r&lt;=r){
 		tree[p].sum+=(tree[p].r-tree[p].l+1)*k;
 		tree[p].lazy+=k;
@@ -203,8 +217,8 @@ void modify(ll p,ll l,ll r,ll k){
 	}
 	update(p);
 	ll mid=(tree[p].l+tree[p].r)&gt;&gt;1;
-	if(l&lt;=mid)modify(p&lt;&lt;1,l,r,k);
-	if(r&gt;mid)modify(p&lt;&lt;1|1,l,r,k);
+	if(l&lt;=mid)modify_add(p&lt;&lt;1,l,r,k);
+	if(r&gt;mid)modify_add(p&lt;&lt;1|1,l,r,k);
 	push_up(p);
 }
 ll sum(ll p,ll l,ll r){
@@ -247,19 +261,24 @@ int main(){
 		if(opt==1){
 			ll x,y,k;
 			cin&gt;&gt;x&gt;&gt;y&gt;&gt;k;
-			modify(1,x,y,k);
+			modify_cover(1,x,y,k);
 		}
 		if(opt==2){
-			ll x,y;
-			cin&gt;&gt;x&gt;&gt;y;
-			cout&lt;&lt;sum(1,x,y)&lt;&lt;endl;
+			ll x,y,k;
+			cin&gt;&gt;x&gt;&gt;y&gt;&gt;k;
+			modify_add(1,x,y,k);
 		}
 		if(opt==3){
 			ll x,y;
 			cin&gt;&gt;x&gt;&gt;y;
-			cout&lt;&lt;maxx(1,x,y)&lt;&lt;endl;
+			cout&lt;&lt;sum(1,x,y)&lt;&lt;endl;
 		}
 		if(opt==4){
+			ll x,y;
+			cin&gt;&gt;x&gt;&gt;y;
+			cout&lt;&lt;maxx(1,x,y)&lt;&lt;endl;
+		}
+		if(opt==5){
 			ll x,y;
 			cin&gt;&gt;x&gt;&gt;y;
 			cout&lt;&lt;minn(1,x,y)&lt;&lt;endl;
