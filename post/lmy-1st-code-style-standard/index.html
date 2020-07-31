@@ -1,0 +1,275 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>lmy-1st-Code-Style-Standard | Oak_limy 的 博客</title>
+<link rel="shortcut icon" href="https://Oak-limy.github.io/favicon.ico?v=1596198689828">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://Oak-limy.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="lmy-1st-Code-Style-Standard | Oak_limy 的 博客 - Atom Feed" href="https://Oak-limy.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="头文件
+
+万能头文件
+
+#include &lt;bits/stdc++.h&gt;
+
+
+有时使用宏定义的语句
+
+#define pb push_back
+#define rp(i,1,n) for(int i=1;i&lt;=n;i++)..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://Oak-limy.github.io">
+  <img class="avatar" src="https://Oak-limy.github.io/images/avatar.png?v=1596198689828" alt="">
+  </a>
+  <h1 class="site-title">
+    Oak_limy 的 博客
+  </h1>
+  <p class="site-description">
+    音无结弦之时，悦动天使之心。立于浮华之世，奏响天籁之音。
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              lmy-1st-Code-Style-Standard
+            </h2>
+            <div class="post-info">
+              <span>
+                2020-07-31
+              </span>
+              <span>
+                3 min read
+              </span>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <h2 id="头文件">头文件</h2>
+<ul>
+<li>万能头文件</li>
+</ul>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+</code></pre>
+<ul>
+<li>有时使用宏定义的语句</li>
+</ul>
+<pre><code class="language-cpp">#define pb push_back
+#define rp(i,1,n) for(int i=1;i&lt;=n;i++)
+</code></pre>
+<ul>
+<li>宏定义的数字严格<strong>大写</strong></li>
+</ul>
+<pre><code class="language-cpp">#define MOD 998244353
+#define MAXN 200010
+</code></pre>
+<h2 id="括号">括号</h2>
+<ul>
+<li><strong>大括号不换行</strong></li>
+</ul>
+<pre><code class="language-cpp">for(int i=1;i&lt;=n;i++){
+    // do something
+}
+</code></pre>
+<ul>
+<li>当大括号里的语句只有一条，或几条语句有连贯性且较为短小时，选择<strong>不使用大括号，并接着大括号前的语句</strong></li>
+</ul>
+<pre><code class="language-cpp">for(int i=1;i&lt;=n;i++)cin&gt;&gt;a[i];
+if(a&gt;b)a=tmp,a=b,b=tmp;
+</code></pre>
+<h2 id="循环">循环</h2>
+<ul>
+<li>循环从1开始，使用<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>&lt;</mo><mo>=</mo></mrow><annotation encoding="application/x-tex">&lt;=</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mrel">&lt;</span></span><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">=</span></span></span></span>，当为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>~<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>时使用<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>&lt;</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">&lt;n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span>，使用i++（编译器比人聪明</li>
+</ul>
+<pre><code class="language-cpp">for(int i=1;i&lt;=n;i++)
+for(int i=1;i&lt;n;i++)
+</code></pre>
+<ul>
+<li>较为偏向于for循环而不是while</li>
+</ul>
+<pre><code class="language-cpp">for( ; ; ;)
+</code></pre>
+<h2 id="缩进">缩进</h2>
+<ul>
+<li>二格或四格缩进都可，主要偏向四格，二格看着比较tourist风格（</li>
+<li>使用Tab而不是空格缩进</li>
+</ul>
+<h2 id="常规">常规</h2>
+<ul>
+<li>不必加空格的地方尽量不加空格，有时为了代码方便调试会空一行</li>
+<li>数组全局定义，使用宏定义的MAXN</li>
+<li>选择 cin或cout，有时会写读入优化</li>
+<li>宏定义里#define endl \n</li>
+<li>宏定义ll而不是直接使用long long</li>
+<li>会写 using namespace std;</li>
+<li>自定义的namespace里不用缩进</li>
+</ul>
+<pre><code class="language-cpp">namespace xxx{
+int a,b,c;
+//do something...
+}
+</code></pre>
+<ul>
+<li>bool函数里使用true或false，但在if语句里，使用0或1或!</li>
+</ul>
+<pre><code class="language-cpp">bool judge(){
+    return true/false;
+}
+if(!judge()) / if(judge()==0)
+</code></pre>
+<ul>
+<li>使用%2==1或&amp;1</li>
+<li>在线段树中，不使用<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∗</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">*2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">∗</span><span class="mord">2</span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∗</mo><mn>2</mn><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">*2+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">∗</span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></li>
+</ul>
+<pre><code class="language-cpp">build(p&lt;&lt;1,l,mid);
+build(p&lt;&lt;1|1,mid+1,r);
+</code></pre>
+<ul>
+<li>不使用 C++11 的东西，考试不能用</li>
+<li>一些比较模板的东西会压行压的很彻底</li>
+</ul>
+<pre><code class="language-cpp">void add_edge(ll u,ll v){
+    edge[++tot].nxt=head[u];edge[tot].to=v;head[u]=tot;
+    edge[++tot].nxt=head[v];edge[tot].to=u;head[v]=tot;
+}
+ll gcd(ll a,ll b){ll r;while(b&gt;0){r=a%b;a=b;b=r;}return a;}
+</code></pre>
+<p>其他的还有快速幂之类的</p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E5%A4%B4%E6%96%87%E4%BB%B6">头文件</a></li>
+<li><a href="#%E6%8B%AC%E5%8F%B7">括号</a></li>
+<li><a href="#%E5%BE%AA%E7%8E%AF">循环</a></li>
+<li><a href="#%E7%BC%A9%E8%BF%9B">缩进</a></li>
+<li><a href="#%E5%B8%B8%E8%A7%84">常规</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://Oak-limy.github.io/post/xiao-xue-liu-nian-ji-ye-neng-ting-dong-de-zhuang-ya-dpqian-tan/">
+              <h3 class="post-title">
+                小学六年级也能听懂的状压dp（浅谈
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://Oak-limy.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
